@@ -22,8 +22,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qCM-Gw-RX3">
-                                <rect key="frame" x="22" y="66" width="276" height="76"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qCM-Gw-RX3">
+                                <rect key="frame" x="50" y="66" width="276" height="76"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="76" id="x8d-0z-Yqr"/>
                                 </constraints>
@@ -41,36 +41,38 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="txG-xb-pcD"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6vL-Rm-Ef3">
-                                <rect key="frame" x="41" y="170" width="238" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="changeLabel:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6G4-ba-CBX"/>
-                                </connections>
-                            </button>
-                            <pickerView contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="By5-E0-xTW">
-                                <rect key="frame" x="41" y="218" width="294" height="216"/>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="By5-E0-xTW">
+                                <rect key="frame" x="41" y="196" width="294" height="216"/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="Hi0-dY-yp5"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="nbO-XX-t9c"/>
                                 </connections>
                             </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6vL-Rm-Ef3">
+                                <rect key="frame" x="69" y="161" width="237" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Say Hello"/>
+                                <connections>
+                                    <action selector="changeLabel:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6G4-ba-CBX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="By5-E0-xTW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0di-gy-dEq"/>
                             <constraint firstItem="Z17-Sv-GA7" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="27n-y3-Knb"/>
                             <constraint firstItem="qCM-Gw-RX3" firstAttribute="top" secondItem="Z17-Sv-GA7" secondAttribute="bottom" constant="8" id="2Po-QW-yBC"/>
-                            <constraint firstItem="6vL-Rm-Ef3" firstAttribute="top" secondItem="qCM-Gw-RX3" secondAttribute="bottom" constant="19" id="3OT-vG-eaa"/>
+                            <constraint firstItem="6vL-Rm-Ef3" firstAttribute="top" secondItem="qCM-Gw-RX3" secondAttribute="bottom" constant="19" id="3OT-vG-eaa" userLabel="Button.top = Simple Label.bottom + 8"/>
                             <constraint firstItem="6vL-Rm-Ef3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7JP-fS-lDy"/>
                             <constraint firstAttribute="leadingMargin" secondItem="Z17-Sv-GA7" secondAttribute="leading" id="8Gs-fX-xpT"/>
                             <constraint firstItem="By5-E0-xTW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="25" id="CW5-KR-49O" userLabel="Picker View.leading = leadingMargin"/>
-                            <constraint firstItem="qCM-Gw-RX3" firstAttribute="width" secondItem="Z17-Sv-GA7" secondAttribute="width" id="DY5-c2-pWx"/>
                             <constraint firstAttribute="trailingMargin" secondItem="By5-E0-xTW" secondAttribute="trailing" constant="24" id="Gfd-SE-iLn" userLabel="trailingMargin = Picker View.trailing"/>
-                            <constraint firstItem="6vL-Rm-Ef3" firstAttribute="width" secondItem="qCM-Gw-RX3" secondAttribute="width" id="aAb-SV-d2F"/>
+                            <constraint firstItem="6vL-Rm-Ef3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="53" id="J0o-M7-2gs" userLabel="Say Hello.leading = leadingMargin"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Z17-Sv-GA7" secondAttribute="trailing" id="dFN-Cm-wK3"/>
-                            <constraint firstItem="6vL-Rm-Ef3" firstAttribute="width" secondItem="qCM-Gw-RX3" secondAttribute="width" id="hgD-rK-g2r"/>
-                            <constraint firstItem="By5-E0-xTW" firstAttribute="leading" secondItem="6vL-Rm-Ef3" secondAttribute="leading" id="nuC-Dl-DQs" userLabel="Picker View.leading = Button.trailing"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qCM-Gw-RX3" secondAttribute="trailing" constant="33" id="l99-m9-hJB" userLabel="trailingMargin = Simple Label.trailing"/>
+                            <constraint firstItem="By5-E0-xTW" firstAttribute="top" secondItem="6vL-Rm-Ef3" secondAttribute="bottom" constant="-1" id="uEb-Vh-wKe" userLabel="Picker View.top = Say Hello.bottom + 8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6vL-Rm-Ef3" secondAttribute="trailing" constant="53" id="unW-sF-9xD" userLabel="trailingMargin = Say Hello.trailing"/>
+                            <constraint firstItem="qCM-Gw-RX3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="34" id="zfR-Sg-Z84" userLabel="Simple Label.leading = leadingMargin"/>
                         </constraints>
                     </view>
                     <connections>

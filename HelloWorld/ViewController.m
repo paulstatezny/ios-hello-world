@@ -81,4 +81,28 @@
     return self.pickerChoices[row];
 }
 
+-(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    UIColor *color;
+    
+    switch (row) {
+        case 0: case 1:
+            color = [UIColor colorWithRed:1.0 green:0.85 blue:0.0 alpha:1.0];
+            break;
+            
+        case 2: case 3:
+            color = [UIColor grayColor];
+            break;
+            
+        case 4:
+            color = [UIColor whiteColor];
+            break;
+        
+        default:
+            color = [UIColor purpleColor];
+            break;
+    }
+    
+    self.view.backgroundColor = color;
+}
+
 @end
