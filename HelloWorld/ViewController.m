@@ -12,6 +12,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *simpleLabel;
 @property (weak, nonatomic) IBOutlet UITextField *simpleTextField;
 
+@property NSArray *pickerChoices;
+
 @end
 
 @implementation ViewController
@@ -39,6 +41,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     NSLog(@"viewDidLoad");
+    self.pickerChoices = @[@"Rock Star", @"10x", @"Prototyper", @"Refactor Master", @"Isaiah"];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -55,7 +58,6 @@
                                     style:UIAlertActionStyleDefault
                                     handler:^(UIAlertAction * action) {}];
     
-    defaultAction.enabled = NO;
     [alertController addAction:defaultAction];
     
     [self presentViewController:alertController animated:YES completion:nil];
@@ -67,5 +69,16 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+    return 1;
+}
+
+-(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+    return [self.pickerChoices count];
+}
+
+-(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    return self.pickerChoices[row];
+}
 
 @end

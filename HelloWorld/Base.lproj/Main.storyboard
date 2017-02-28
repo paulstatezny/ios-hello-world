@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,34 +22,56 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Please type your name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z17-Sv-GA7">
-                                <frame key="frameInset" minX="16" minY="28" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qCM-Gw-RX3">
+                                <rect key="frame" x="22" y="66" width="276" height="76"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="76" id="x8d-0z-Yqr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Please type your name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z17-Sv-GA7">
+                                <rect key="frame" x="16" y="28" width="343" height="30"/>
                                 <accessibility key="accessibilityConfiguration" hint="Please"/>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="txG-xb-pcD"/>
                                 </connections>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qCM-Gw-RX3">
-                                <frame key="frameInset" minX="16" minY="81" width="343" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6vL-Rm-Ef3">
-                                <frame key="frameInset" minX="37" minY="146" width="301" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6vL-Rm-Ef3">
+                                <rect key="frame" x="41" y="170" width="238" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="changeLabel:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6G4-ba-CBX"/>
                                 </connections>
                             </button>
+                            <pickerView contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="By5-E0-xTW">
+                                <rect key="frame" x="41" y="218" width="294" height="216"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="Hi0-dY-yp5"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="nbO-XX-t9c"/>
+                                </connections>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="By5-E0-xTW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0di-gy-dEq"/>
+                            <constraint firstItem="Z17-Sv-GA7" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="27n-y3-Knb"/>
+                            <constraint firstItem="qCM-Gw-RX3" firstAttribute="top" secondItem="Z17-Sv-GA7" secondAttribute="bottom" constant="8" id="2Po-QW-yBC"/>
+                            <constraint firstItem="6vL-Rm-Ef3" firstAttribute="top" secondItem="qCM-Gw-RX3" secondAttribute="bottom" constant="19" id="3OT-vG-eaa"/>
+                            <constraint firstItem="6vL-Rm-Ef3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7JP-fS-lDy"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="Z17-Sv-GA7" secondAttribute="leading" id="8Gs-fX-xpT"/>
+                            <constraint firstItem="By5-E0-xTW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="25" id="CW5-KR-49O" userLabel="Picker View.leading = leadingMargin"/>
+                            <constraint firstItem="qCM-Gw-RX3" firstAttribute="width" secondItem="Z17-Sv-GA7" secondAttribute="width" id="DY5-c2-pWx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="By5-E0-xTW" secondAttribute="trailing" constant="24" id="Gfd-SE-iLn" userLabel="trailingMargin = Picker View.trailing"/>
+                            <constraint firstItem="6vL-Rm-Ef3" firstAttribute="width" secondItem="qCM-Gw-RX3" secondAttribute="width" id="aAb-SV-d2F"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Z17-Sv-GA7" secondAttribute="trailing" id="dFN-Cm-wK3"/>
+                            <constraint firstItem="6vL-Rm-Ef3" firstAttribute="width" secondItem="qCM-Gw-RX3" secondAttribute="width" id="hgD-rK-g2r"/>
+                            <constraint firstItem="By5-E0-xTW" firstAttribute="leading" secondItem="6vL-Rm-Ef3" secondAttribute="leading" id="nuC-Dl-DQs" userLabel="Picker View.leading = Button.trailing"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="simpleLabel" destination="qCM-Gw-RX3" id="Fhp-x2-91j"/>
@@ -54,7 +80,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="137.18140929535232"/>
+            <point key="canvasLocation" x="133.59999999999999" y="135.38230884557723"/>
         </scene>
     </scenes>
 </document>
